@@ -1,2 +1,139 @@
-["victoroofic1"]
-["victoroofic1"]
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Dark</title>
+    <style>
+        /* Reset e estilo base */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background-color: #121212; color: #f0f0f0; line-height: 1.6; }
+        a { color: #ff6b6b; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { font-size: 2.5em; color: #ff6b6b; }
+
+        nav { margin-top: 10px; }
+        nav a { margin: 0 15px; font-weight: bold; }
+
+        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+
+        .about, .gallery, .contact { margin-bottom: 60px; }
+        h2 { font-size: 2em; margin-bottom: 20px; color: #ff6b6b; }
+
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .gallery-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery-images img:hover { transform: scale(1.05); }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+        }
+        button {
+            padding: 12px;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #ff4757; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+        }
+
+        @media (max-width: 600px) {
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Victor Oficial</h1>
+        <nav>
+            <a href="#about">Sobre</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about">
+        <h2>Sobre Mim</h2>
+        <p>Bem-vindo ao meu site! Aqui compartilho meu estilo de vida, projetos e momentos especiais. Explore minha galeria e sinta-se à vontade para entrar em contato!</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Galeria</h2>
+        <div class="gallery-images">
+            <img src="https://source.unsplash.com/400x300/?dark,art" alt="Imagem 1">
+            <img src="https://source.unsplash.com/400x300/?dark,photo" alt="Imagem 2">
+            <img src="https://source.unsplash.com/400x300/?dark,style" alt="Imagem 3">
+            <img src="https://source.unsplash.com/400x300/?dark,creative" alt="Imagem 4">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu email" required>
+            <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="formMessage" style="margin-top:10px;"></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Victor Oficial | Redes sociais: 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const msg = document.getElementById('formMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            msg.style.color = '#ff6b6b';
+            msg.textContent = 'Mensagem enviada com sucesso! (simulada)';
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
